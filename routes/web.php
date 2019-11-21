@@ -18,3 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+# has route
+Route::get('posts/{hash}/edit', [
+    'as'   => 'posts.edit',
+    'uses' => 'PostsController@edit'
+]);
+
+Route::get('posts/{post}', [
+    'as'   => 'posts.show',
+    'uses' => 'PostsController@show'
+]);
+
+
+
+Route::apiResource('posts', 'PostsController');
