@@ -11,23 +11,29 @@ class WelcomeUser extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'welcome:user {name?}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Greeting to user.';
+
+
+    protected $user;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(\App\User $user)
     {
         parent::__construct();
+
+        $this->user = $user;
+        \Log::info("welcome command reloaded");
     }
 
     /**
@@ -37,6 +43,12 @@ class WelcomeUser extends Command
      */
     public function handle()
     {
-        //
+        //dd($this->user);
+
+        // Get current user and other operation goes here
+
+        
+        $message = "Welcome ". $this->argument("name");
+        \Log::info($message);
     }
 }
