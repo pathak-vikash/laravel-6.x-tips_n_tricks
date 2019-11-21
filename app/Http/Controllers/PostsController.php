@@ -46,7 +46,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        return view("posts.form", ['post' => $post]);
+        return $post;
     }
 
     /**
@@ -57,7 +57,7 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        
+        return view("posts.form", ['post' => $post]);
     }
 
     /**
