@@ -28,6 +28,17 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::bind('hash', function ( $hash ) {
+
+            # First with abort
+            //return App\User::where('id', decrypt( $hash ))->first() ?? abort(404);
+
+            # firstOr
+           /*  return \App\User::where('id', decrypt( $hash ))
+                ->firstOr(function () {
+                    abort(404);
+                }); */
+            
+            # findOrFail
             return \App\Post::findOrFail( decrypt( $hash ) );
         });
     }

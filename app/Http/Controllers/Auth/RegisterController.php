@@ -64,6 +64,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
+        # First + Create
         /* $user = User::where('email', $data['email'])->first();
         if (!$user) {
             return User::create([
@@ -73,6 +74,18 @@ class RegisterController extends Controller
             ]);
         } */
 
+        # firstOr
+        /* return User::where('email', $data['email'])
+            ->firstOr(function() use($data){
+                return User::create([
+                    'email' => $data['email'],
+                    'name' => $data['name'],
+                    'password' => Hash::make($data['password'])
+                ]);
+            }); */
+
+        
+        # firstOrCreate
         return User::firstOrCreate(
             ['email' => $data['email']],
             [
