@@ -28,7 +28,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::bind('hash', function ( $hash ) {
-            return \App\Post::Find(decrypt( $hash )) ?? abort(404);
+            return \App\Post::findOrFail( decrypt( $hash ) );
         });
     }
 
