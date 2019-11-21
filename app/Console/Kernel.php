@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\WelcomeUser;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -27,7 +28,10 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
 
-        $schedule->command("welcome:user Vikash")
+        /* $schedule->command("welcome:user Vikash")
+                    ->everyMinute(); */
+
+        $schedule->command(WelcomeUser::class, ["Vikash"])
                     ->everyMinute();
     }
 
