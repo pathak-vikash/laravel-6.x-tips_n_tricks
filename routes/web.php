@@ -113,11 +113,17 @@ Route::get("model-states-reset", function(){
 });
 
 # Automatic Model Validation.
-
 Route::get('auto-model-validation', function(){
     $user = new \App\User();
 
     dd($user->save());
+});
+
+Route::get('disabled-updating', function(){
+    $res = \App\User::find(419)
+            ->update(["email" => "anotheruser@test.net"]);
+
+    dd($res);
 });
 
 
