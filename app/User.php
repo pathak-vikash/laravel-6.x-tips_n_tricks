@@ -37,7 +37,27 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    public static $autoValidates = true;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function($model){
+            if ($model::$autoValidates) {
+                return $model->validate();
+            }
+        });
+    }
+
     public function posts() {
         return $this->hasMany(Post::class);
+    }
+
+
+    public function validate()
+    {
+        return false;
     }
 }
