@@ -30,6 +30,9 @@ Route::get('posts/{post}', [
     'uses' => 'PostsController@show'
 ]);
 
+# resource Posts
+Route::apiResource('posts', 'PostsController');
+
 
 # model states
 Route::get("model-states", function(){
@@ -109,6 +112,12 @@ Route::get("model-states-reset", function(){
     return $post;
 });
 
+# Automatic Model Validation.
+
+Route::get('auto-model-validation', function(){
+    $user = new \App\User();
+
+    dd($user->save());
+});
 
 
-Route::apiResource('posts', 'PostsController');
