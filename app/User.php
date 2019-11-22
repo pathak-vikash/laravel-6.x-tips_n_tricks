@@ -44,10 +44,18 @@ class User extends Authenticatable
     {
         parent::boot();
 
+        # saving
         static::saving(function($model){
+            \Log::info("Called saving");
             if ($model::$autoValidates) {
                 return $model->validate();
             }
+        });
+
+        # updating
+        static::updating(function($model) {
+            \Log::info("Called updating");
+            return false;
         });
     }
 
@@ -58,6 +66,6 @@ class User extends Authenticatable
 
     public function validate()
     {
-        return false;
+        return true;
     }
 }
