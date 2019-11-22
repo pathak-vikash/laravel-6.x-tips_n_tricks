@@ -31,5 +31,38 @@ Route::get('posts/{post}', [
 ]);
 
 
+# model states
+Route::get("model-states", function(){
+
+    $post = \App\Post::first();
+
+    \Log::info(["Model State: dirty?", $post->isDirty()]);
+    \Log::info(["Model State: clean?", $post->isClean()]);
+    \Log::info(["Model State: Was Changed?", $post->wasChanged()]);
+    //\Log::info(["Model State: Has Changes?", $post->hasChanges(["title"=>'hello'])]);
+
+    \Log::info(["Model State: Get Dirty", $post->getDirty()]);
+    \Log::info(["Model State: Get Changes", $post->getChanges()]);
+
+    $post->title = "hello world!";
+    
+    \Log::info("--------------Updated title ---------------------------");
+
+    \Log::info(["Model State: dirty?", $post->isDirty()]);
+    \Log::info(["Model State: clean?", $post->isClean()]);
+    \Log::info(["Model State: Get Dirty", $post->getDirty()]);
+
+    $post->save();
+
+    \Log::info(["Model State: Was Changed?", $post->wasChanged()]);
+    //\Log::info(["Model State: Has Changes?", $post->hasChanges(["title"=>'hello'])]);
+
+    
+    \Log::info(["Model State: Get Changes", $post->getChanges()]);
+    
+    return $post;
+});
+
+
 
 Route::apiResource('posts', 'PostsController');
