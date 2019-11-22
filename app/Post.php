@@ -18,7 +18,6 @@ class Post extends Model
         return encrypt( $this->id );
     }
 
-
     # order by global scope
     protected static function boot()
     {
