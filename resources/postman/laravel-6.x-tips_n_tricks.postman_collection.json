@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "0556f39d-cb7f-4300-af09-5e1e19108ad5",
+		"name": "laravel-6.x-tips_n_tricks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tips & Tricks",
+			"item": [
+				{
+					"name": "All Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/posts",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auto-model-validation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/auto-model-validation",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"auto-model-validation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/model-states-reset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/model-states-reset",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"model-states-reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/model-states",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/model-states",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"model-states"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/posts/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/{hash}/edit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/posts/eyJpdiI6IkVscXdxdUhwZDRHMkdacXpoZ25VTlE9PSIsInZhbHVlIjoiRTlOeXpwN1hPdDJTWUEzc3ZQaGF1dz09IiwibWFjIjoiYWMzZjY3YzBmMGM1MDUwMGZlMWY2YjZjNDY5YmY0YmJkYjZjMzk4YWI0MjU5ZGM3YmUzMzU3ZjUwYjk5M2JjOSJ9/edit",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"posts",
+								"eyJpdiI6IkVscXdxdUhwZDRHMkdacXpoZ25VTlE9PSIsInZhbHVlIjoiRTlOeXpwN1hPdDJTWUEzc3ZQaGF1dz09IiwibWFjIjoiYWMzZjY3YzBmMGM1MDUwMGZlMWY2YjZjNDY5YmY0YmJkYjZjMzk4YWI0MjU5ZGM3YmUzMzU3ZjUwYjk5M2JjOSJ9",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Hello India",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "The content goes here.",
+									"type": "text"
+								},
+								{
+									"key": "_token",
+									"value": "cf31bqvrp00kJ9iUUaWVWrxXm5o1utqvo6nblfho",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PATCH",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/posts/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/disabled-updating",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/disabled-updating",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"disabled-updating"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
